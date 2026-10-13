@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Static head metadata (link previews do not run JS, so these few values are
+     repeated here on purpose). Update them if you change CONFIG below. -->
+<title>Dr. B. Somashekar · Dental Surgeon · Cosmodent Dental Clinic</title>
+<meta name="description" content="Digital visiting card of Dr. B. Somashekar, Dental Surgeon at Cosmodent Dental Clinic, Bengaluru. Save contact, call, WhatsApp or get directions.">
+<meta name="theme-color" content="#0B0B0C">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Dr. B. Somashekar · Dental Surgeon">
+<meta property="og:description" content="Cosmodent Dental Clinic, Bengaluru. Save contact, call, WhatsApp or get directions.">
+<meta property="og:image" content="https://cosmodentdentalclinic.com/wp-content/uploads/2024/02/Cosmodent-Image10.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230B0B0C'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='17' fill='%23C9A55C'%3ES%3C/text%3E%3C/svg%3E">
+
+<style>
+:root{
+  --black:#0B0B0C;
+  --panel:#101011;
+  --gold:#C9A55C;
+  --gold-hi:#E9D29A;
+  --gold-lo:#8F7436;
+  --ivory:#F2ECDF;
+  --text:#CFC8B8;
+  --muted:#8E8778;
+  --hair:rgba(201,165,92,.22);
+  --hair-soft:rgba(242,236,223,.08);
+  --wa:#35C46A;
+
+  --pad:24px;
+  --ease:cubic-bezier(.19,.8,.22,1);
+
+  --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-display:"Didot","Bodoni 72","Bodoni MT","Noto Serif Display","Playfair Display","Noto Serif",Georgia,"Times New Roman",serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--black)}
+body{
+  margin:0;min-height:100vh;min-height:100dvh;
+  background:var(--black);color:var(--text);
+  font:400 15px/1.55 var(--font-ui);
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+  overflow-x:hidden;
+}
+h1,h2,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+svg{display:block;flex:none}
+:focus-visible{outline:1px solid var(--gold-hi);outline-offset:4px}
+
+/* ---------- Card shell ---------- */
+.card{
+  position:relative;width:100%;max-width:440px;margin:0 auto;min-height:100dvh;
+  background:var(--panel);overflow:hidden;
+  padding-bottom:calc(32px + env(safe-area-inset-bottom));
+}
+@media (min-width:520px){
+  body{padding:48px 24px}
+  .card{min-height:0;border:1px solid var(--hair);border-radius:3px;box-shadow:0 40px 90px -40px #000}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  padding:calc(26px + env(safe-area-inset-top)) calc(var(--pad) + env(safe-area-inset-right)) 22px calc(var(--pad) + env(safe-area-inset-left));
+}
+/* one slow ambient glow, GPU-only */
+.hero::before{
+  content:"";position:absolute;top:-140px;right:-150px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(201,165,92,.20),rgba(201,165,92,0));
+  animation:drift 16s ease-in-out infinite alternate;pointer-events:none;
+}
+.hero > *{position:relative}
+
+.hero__top{display:flex;align-items:flex-end;gap:20px}
+
+.arch{position:relative;width:112px;height:144px;flex:none}
+.arch::before{
+  content:"";position:absolute;inset:-6px;border:1px solid var(--gold);
+  border-radius:62px 62px 3px 3px;opacity:.55;
+  animation:fade 1.2s .55s ease both;
+}
+.arch__frame{
+  position:absolute;inset:0;overflow:hidden;border-radius:56px 56px 2px 2px;
+  background:linear-gradient(160deg,#2A2519 0%,#15140F 70%);
+  display:grid;place-items:center;
+  animation:wipe 1.1s .1s var(--ease) both;
+}
+.arch__mono{font:italic 400 38px/1 var(--font-display);color:var(--gold);letter-spacing:.02em}
+.arch__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;
+  animation:settle 1.6s var(--ease) both;
+}
+
+.meta{padding-bottom:2px;min-width:0}
+.meta__role{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.meta__clinic{margin-top:7px;font:400 17px/1.25 var(--font-display);color:var(--ivory)}
+.meta__place{margin-top:3px;font-size:12.5px;color:var(--muted)}
+
+.name{margin-top:26px;font-family:var(--font-display);font-weight:400;color:var(--ivory)}
+.mask{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.mask > span{display:block;animation:lift .95s var(--ease) both;animation-delay:calc(var(--d,0) * 1ms)}
+.name__pre{font-style:italic;font-size:21px;line-height:1.2;color:var(--gold)}
+.name__main{font-size:clamp(38px,12.6vw,52px);line-height:1.08;letter-spacing:-.012em}
+@media (min-width:520px){.name__main{font-size:52px}}
+
+.rule{
+  height:1px;margin:16px 0 12px;transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--gold) 0,var(--gold) 28%,rgba(201,165,92,.12) 100%);
+  animation:draw 1.1s .55s var(--ease) both;
+}
+.tagline{font-size:13.5px;color:var(--muted);letter-spacing:.01em}
+
+/* ---------- Actions ---------- */
+.actions{
+  display:grid;gap:10px;
+  padding:0 calc(var(--pad) + env(safe-area-inset-right)) 0 calc(var(--pad) + env(safe-area-inset-left));
+}
+.actions__row{display:flex;gap:10px}
+.actions__row > *{flex:1 1 0;min-width:0}
+
+.btn{
+  position:relative;display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 16px;overflow:hidden;
+  border:1px solid var(--hair);border-radius:3px;background:transparent;color:var(--ivory);
+  font:500 14.5px/1 var(--font-ui);letter-spacing:.03em;
+  cursor:pointer;user-select:none;-webkit-user-select:none;
+  transition:transform .14s ease,border-color .25s ease,background-color .25s ease;
+}
+.btn svg{width:18px;height:18px;color:var(--gold)}
+.btn:active{transform:scale(.975);border-color:var(--gold);background:rgba(201,165,92,.07)}
+
+.btn--primary{
+  min-height:58px;border:0;color:#17130A;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;
+  background:linear-gradient(100deg,#B8923F 0%,#E6CD8E 48%,#C29E4E 100%);
+  box-shadow:0 14px 34px -16px rgba(201,165,92,.7);
+}
+.btn--primary svg{color:#17130A}
+.btn--primary:active{background:linear-gradient(100deg,#B8923F 0%,#E6CD8E 48%,#C29E4E 100%);filter:brightness(.94)}
+/* light sweep across the gold bar: once on load, then a long pause */
+.btn--primary::after{
+  content:"";position:absolute;top:0;bottom:0;left:0;width:38%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));
+  transform:translateX(-130%) skewX(-18deg);
+  animation:sheen 6.5s 1.2s ease-in-out infinite;pointer-events:none;
+}
+.btn--wa svg{color:var(--wa)}
+
+.links{margin-top:6px}
+.link{
+  display:flex;align-items:center;gap:14px;min-height:54px;padding:6px 0;
+  border-bottom:1px solid var(--hair-soft);
+  transition:padding .3s var(--ease),border-color .3s ease;
+}
+.link svg{width:18px;height:18px;color:var(--gold)}
+.link__label{font-size:14.5px;color:var(--ivory);letter-spacing:.02em}
+.link__value{flex:1;min-width:0;text-align:right;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.link__arrow{width:15px!important;height:15px!important;color:var(--gold-lo)!important;transition:transform .3s var(--ease),color .3s ease}
+.link:active{padding-left:6px;border-color:var(--gold)}
+.link:active .link__arrow{transform:translateX(4px);color:var(--gold)!important}
+
+@media (hover:hover){
+  .btn:hover{border-color:var(--gold);background:rgba(201,165,92,.06)}
+  .btn--primary:hover{background:linear-gradient(100deg,#B8923F 0%,#E6CD8E 48%,#C29E4E 100%);filter:brightness(1.06)}
+  .link:hover{padding-left:6px;border-color:var(--hair)}
+  .link:hover .link__arrow{transform:translateX(4px);color:var(--gold)!important}
+  .rows a:hover{color:var(--gold-hi)}
+}
+
+.status{min-height:18px;margin-top:10px;text-align:center;font-size:12px;color:var(--muted);opacity:0;transition:opacity .35s ease}
+.status.is-on{opacity:1}
+
+/* ---------- Sections ---------- */
+.section{
+  margin-top:30px;
+  padding:0 calc(var(--pad) + env(safe-area-inset-right)) 0 calc(var(--pad) + env(safe-area-inset-left));
+}
+.section__title{
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;
+  font:italic 400 20px/1.2 var(--font-display);color:var(--gold);
+}
+.section__title::after{content:"";flex:1;height:1px;background:var(--hair);transform-origin:0 50%}
+
+.about{font:400 17.5px/1.6 var(--font-display);color:var(--ivory)}
+
+.timeline li{display:grid;grid-template-columns:58px 1fr;gap:6px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--hair-soft);font-size:14.5px}
+.timeline li:last-child{border-bottom:0}
+.timeline b{font:400 17px/1.2 var(--font-display);color:var(--gold);font-variant-numeric:lining-nums}
+
+.practice{font:400 17px/1.75 var(--font-display);color:var(--ivory)}
+.practice span{display:inline-block}
+.practice i{font-style:normal;color:var(--gold);padding:0 .5em}
+
+.rows{display:grid;gap:16px}
+.rows__row{display:grid;grid-template-columns:58px 1fr;gap:6px;font-size:14.5px;line-height:1.55}
+.rows__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.rows a{display:block;transition:color .2s ease}
+.rows small{font-size:12px;color:var(--muted)}
+
+.foot{margin-top:38px;text-align:center;font:italic 400 14px/1 var(--font-display);color:var(--gold-lo);letter-spacing:.03em}
+
+/* ---------- Motion ---------- */
+.rise{animation:rise .7s var(--ease) both;animation-delay:calc(var(--d,0) * 1ms)}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes lift{from{transform:translateY(110%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:.55}}
+@keyframes wipe{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle{from{transform:scale(1.18)}to{transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:none}}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-46px,34px,0)}}
+@keyframes sheen{0%{transform:translateX(-130%) skewX(-18deg)}20%,100%{transform:translateX(420%) skewX(-18deg)}}
+
+/* Scroll reveals — only armed when JS adds .io (so content is never hidden without it) */
+.io .reveal .section__title{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .7s var(--ease)}
+.io .reveal .section__title::after{transform:scaleX(0);transition:transform 1s .15s var(--ease)}
+.io .reveal .st{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .7s var(--ease);transition-delay:calc(var(--i,0) * 55ms + 140ms)}
+.io .reveal.is-in .section__title,.io .reveal.is-in .st{opacity:1;transform:none}
+.io .reveal.is-in .section__title::after{transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .btn--primary::after{display:none}
+}
+
+@media (max-width:350px){
+  :root{--pad:18px}
+  .arch{width:96px;height:124px}
+  .arch__frame{border-radius:48px 48px 2px 2px}
+  .arch::before{border-radius:54px 54px 3px 3px}
+  .btn{font-size:13.5px;padding:0 10px}
+}
+</style>
+</head>
+
+<body>
+<main class="card">
+  <header class="hero">
+    <div class="hero__top">
+      <div class="arch">
+        <div class="arch__frame" id="portrait"><span class="arch__mono" id="mono" aria-hidden="true"></span></div>
+      </div>
+      <div class="meta">
+        <p class="meta__role rise" style="--d:350" id="role"></p>
+        <p class="meta__clinic rise" style="--d:430" id="clinic"></p>
+        <p class="meta__place rise" style="--d:510" id="place"></p>
+      </div>
+    </div>
+
+    <h1 class="name" id="name">
+      <span class="mask name__pre"><span style="--d:250" id="namePre"></span></span>
+      <span class="mask name__main"><span style="--d:330" id="nameMain"></span></span>
+    </h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="tagline rise" style="--d:700" id="tagline"></p>
+  </header>
+
+  <nav class="actions" id="actions" aria-label="Contact options"></nav>
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+
+  <div id="sections"></div>
+
+  <footer class="foot" id="foot"></footer>
+
+  <!-- Shown only when JavaScript is disabled -->
+  <noscript>
+    <p style="padding:24px;text-align:center">Dr. B. Somashekar · Cosmodent Dental Clinic<br>
+    <a href="tel:+919886782139" style="text-decoration:underline">Call +91 98867 82139</a> ·
+    <a href="https://cosmodentdentalclinic.com/" style="text-decoration:underline">Website</a></p>
+  </noscript>
+</main>
+
+<script>
+/* Doctor's photograph (supplied by the client), JPEG 336×431, embedded so the card is one file. */
+var EMBEDDED_PHOTO = 'data:image/jpeg;base64,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';
+</script>
+<script>
+(function () {
+  'use strict';
+
+  /* =====================================================================
+     CONFIGURATION — edit values here; the whole page and the vCard update.
+     Source key:  [LINKO]  linko.page/cosmodentdentalclinic
+                  [SITE]   cosmodentdentalclinic.com (home / about / contact)
+     Lines marked  VERIFY  should be confirmed with the doctor before printing cards.
+     Leave a value as '' (or an array as []) to hide that element.
+     ===================================================================== */
+  var CONFIG = {
+    // --- Doctor ---------------------------------------------------------
+    name: 'Dr. B. Somashekar',                    // [LINKO] + [SITE]
+    nameParts: { prefix: 'Dr.', given: 'B.', family: 'Somashekar' }, // heading + vCard
+    designation: 'Dental Surgeon',                // [LINKO] + [SITE]
+    tagline: 'General dentistry · In practice since 2001', // [SITE] about page
+
+    // VERIFY: the degree itself (e.g. BDS) and any registration number are NOT stated
+    // on either source, so none is shown. Add it here once confirmed, e.g. 'BDS'.
+    // It appears next to the designation and in the vCard.
+    qualifications: '',
+
+    // Portrait. 'EMBEDDED_PHOTO' is the doctor's supplied photo, built into this file
+    // (see the small script just above), so it always loads with no extra upload.
+    // To swap it, upload a new image to the repo and set e.g. 'doctor-photo.jpg'.
+    // If an image fails, the fallback is tried, then a monogram placeholder.
+    profileImage: EMBEDDED_PHOTO,
+    profileImageFallback: '',
+
+    about: 'Dental surgeon and founder of Cosmodent Dental Clinic, Bengaluru. In general practice since 2001, with continued training in endodontics and implantology.', // [SITE] about page
+
+    // [SITE] about page. Each row: [left marker, text]
+    credentials: [
+      ['1999', 'Graduated from S.J.M.D.C., Chitradurga'],
+      ['2001', 'Founded Cosmodent Dental Clinic'],
+      ['ITI', 'Member, International Team for Implantology']
+    ],
+    languages: ['English', 'Hindi', 'Kannada', 'Telugu'], // [SITE]
+
+    // [SITE] services / "Specialist" list
+    specializations: [
+      'Root Canal Treatment', 'Cleaning & Polishing', 'Tooth Whitening',
+      'Cosmetic Dentistry', 'Porcelain Veneers', 'Extractions',
+      'Implants & Dentures', 'Crowns & Bridges', 'Orthodontic Treatment'
+    ],
+
+    // --- Clinic ---------------------------------------------------------
+    clinic: 'Cosmodent Dental Clinic',
+    established: '2001',                           // [SITE] '' hides "Est."
+    address: {                                     // [SITE] contact page
+      street: '#882, Shri Ganga Dreams, Opp. Mother Teresa Public School, MES Ring Road',
+      locality: 'Muthyala Nagar, Mathikere',
+      city: 'Bengaluru',
+      state: 'Karnataka',
+      postalCode: '560054',
+      country: 'India'
+    },
+    hours: 'Mon – Sat · 10 am – 2 pm, 5 pm – 9 pm', // [SITE]
+
+    // --- Contact --------------------------------------------------------
+    // First entry is the primary number used by "Call Now". International format, no spaces.
+    // 98867 82139 is the mobile listed beside the doctor's name on the about page. [SITE]
+    phones: [
+      { label: 'Mobile', number: '+919886782139', display: '+91 98867 82139' },
+      { label: 'Mobile', number: '+919632622139', display: '+91 96326 22139' },
+      { label: 'Clinic', number: '+918041900176', display: '080 4190 0176' }
+    ],
+
+    // VERIFY: this is the number behind the clinic website's own "Chat us" WhatsApp
+    // link. It differs from the published phone numbers above, so confirm it is the
+    // right WhatsApp line. Digits only, with country code (91…). '' hides the button.
+    whatsapp: '917349745493',
+    whatsappMessage: 'Hello Dr. Somashekar, I would like to book an appointment.',
+
+    // [SITE] header, footer and contact page. (The about page also lists
+    // dentalcare@cosmodentdentalclinic.com — swap in if preferred.)
+    email: 'somscosmodent@gmail.com',
+
+    website: 'https://cosmodentdentalclinic.com/',
+
+    // Text destination sent to Google Maps (no invented coordinates). [SITE]
+    // VERIFY: tap Get Directions once and confirm the pin; if needed, replace this
+    // with the clinic's exact Google Maps listing name.
+    mapsDestination: 'Cosmodent Dental Clinic, 882, Ganga Dreams, MES Ring Rd, opposite Mother Teresa Public School, Muthyala Nagar, Mathikere, Bengaluru, Karnataka 560054',
+
+    vcardFilename: 'dr-b-somashekar.vcf'
+  };
+  /* ========================= END CONFIGURATION ========================= */
+
+  var ICON = {
+    save: '<path d="M16 21v-1.500A3.500 3.500 0 0 0 12.500 16h-5A3.500 3.500 0 0 0 4 19.500V21"/><circle cx="10" cy="8.500" r="3.500"/><path d="M19 8v6M16 11h6"/>',
+    check: '<path d="M5 12.500l4.500 4.500L19 7.500"/>',
+    call: '<path d="M5.500 3.500h3l1.500 4-2 1.500a11 11 0 0 0 5 5l1.500-2 4 1.500v3a2 2 0 0 1-2.200 2A16.500 16.500 0 0 1 3.500 5.700 2 2 0 0 1 5.500 3.500z"/>',
+    wa: '<path d="M3.500 20.500l1.300-4.300A8.300 8.300 0 1 1 8 19.300l-4.500 1.200z"/><path d="M9.200 8.700c-.3 2.900 3.200 6.400 6.100 6.100l.9-1.300-1.800-1-.9.800a4.600 4.600 0 0 1-2.200-2.200l.8-.9-1-1.800-1.900.3z"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="1.500"/><path d="M3.500 7.500l8.500 6 8.500-6"/>',
+    pin: '<path d="M12 21s-6.500-5.600-6.500-11a6.500 6.500 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.400"/>',
+    web: '<circle cx="12" cy="12" r="8.500"/><path d="M3.500 12h17M12 3.500c2.300 2.300 3.500 5.200 3.500 8.500s-1.200 6.200-3.500 8.500c-2.300-2.300-3.500-5.200-3.500-8.500S9.700 5.800 12 3.500z"/>',
+    arrow: '<path d="M5 12h14M13.500 6.500L19 12l-5.500 5.500"/>'
+  };
+
+  function icon(name, cls) {
+    return '<svg' + (cls ? ' class="' + cls + '"' : '') + ' viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[name] + '</svg>';
+  }
+  function esc(value) {
+    return String(value).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function $(id) { return document.getElementById(id); }
+
+  var C = CONFIG;
+  var a = C.address;
+  var n = C.nameParts;
+  var addressLine = [a.street, a.locality, a.city + ' ' + a.postalCode, a.state].filter(Boolean).join(', ');
+  var primary = C.phones[0];
+  var domain = C.website.replace(/^https?:\/\/|\/$/g, '');
+  var mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(C.mapsDestination || addressLine);
+  var waUrl = C.whatsapp ? 'https://wa.me/' + C.whatsapp.replace(/\D/g, '') + (C.whatsappMessage ? '?text=' + encodeURIComponent(C.whatsappMessage) : '') : '';
+  var mailUrl = C.email ? 'mailto:' + C.email : '';
+
+  /* ---------- Hero ---------- */
+  $('role').textContent = C.designation + (C.qualifications ? ' · ' + C.qualifications : '');
+  $('clinic').textContent = C.clinic;
+  $('place').textContent = a.city + (C.established ? ' · Est. ' + C.established : '');
+  $('name').setAttribute('aria-label', C.name);
+  $('namePre').textContent = n.prefix + ' ' + n.given;
+  $('nameMain').textContent = n.family;
+  $('tagline').textContent = C.tagline;
+  $('mono').textContent = n.family.charAt(0).toUpperCase();
+
+  (function loadPortrait() {
+    var sources = [C.profileImage, C.profileImageFallback].filter(Boolean);
+    if (!sources.length) return;                       // monogram placeholder stays
+    var img = new Image();
+    var index = 0;
+    img.className = 'arch__img';
+    img.alt = 'Portrait of ' + C.name;
+    img.decoding = 'async';
+    img.referrerPolicy = 'no-referrer';
+    img.width = 336; img.height = 431;
+    img.onload = function () { $('portrait').appendChild(img); };
+    img.onerror = function () { index += 1; if (index < sources.length) img.src = sources[index]; };
+    img.src = sources[0];
+  })();
+
+  /* ---------- Actions ---------- */
+  function attrs(href, aria, external) {
+    return ' href="' + esc(href) + '"' + (external ? ' target="_blank" rel="noopener"' : '') + ' aria-label="' + esc(aria) + '"';
+  }
+  function btn(cls, href, iconName, label, aria, external, d) {
+    return '<a class="btn ' + cls + ' rise" style="--d:' + d + '"' + attrs(href, aria, external) + '>' + icon(iconName) + '<span>' + label + '</span></a>';
+  }
+  function row(href, iconName, label, value, aria, external, d) {
+    return '<a class="link rise" style="--d:' + d + '"' + attrs(href, aria, external) + '>' + icon(iconName) +
+      '<span class="link__label">' + label + '</span><span class="link__value">' + esc(value) + '</span>' + icon('arrow', 'link__arrow') + '</a>';
+  }
+
+  var pair = btn('', 'tel:' + primary.number, 'call', 'Call Now', 'Call ' + C.name + ' on ' + primary.display, false, 880);
+  if (waUrl) pair += btn('btn--wa', waUrl, 'wa', 'WhatsApp', 'Message on WhatsApp', true, 950);
+
+  var rows = '';
+  if (mailUrl) rows += row(mailUrl, 'mail', 'Email', C.email, 'Email ' + C.email, false, 1030);
+  rows += row(mapsUrl, 'pin', 'Directions', a.locality.split(',').pop().trim() + ', ' + a.city, 'Get directions to ' + C.clinic + ' in Google Maps', true, 1100);
+  if (C.website) rows += row(C.website, 'web', 'Website', domain, 'Visit the ' + C.clinic + ' website', true, 1170);
+
+  $('actions').innerHTML =
+    '<button type="button" class="btn btn--primary rise" style="--d:780" id="saveBtn">' + icon('save') + '<span id="saveLabel">Save Contact</span></button>' +
+    '<div class="actions__row">' + pair + '</div>' +
+    '<div class="links">' + rows + '</div>';
+
+  /* ---------- Sections (rendered only when there is data) ---------- */
+  function section(title, body) {
+    return '<section class="section reveal"><h2 class="section__title">' + title + '</h2>' + body + '</section>';
+  }
+  var html = '';
+
+  if (C.about) html += section('About', '<p class="about st">' + esc(C.about) + '</p>');
+
+  var facts = C.credentials.map(function (r, i) {
+    return '<li class="st" style="--i:' + i + '"><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></li>';
+  });
+  if (facts.length) html += section('Background', '<ul class="timeline">' + facts.join('') + '</ul>');
+
+  if (C.specializations.length) {
+    html += section('Practice', '<p class="practice">' + C.specializations.map(function (s, i) {
+      return '<span class="st" style="--i:' + i + '">' + esc(s) + (i < C.specializations.length - 1 ? '<i aria-hidden="true">/</i>' : '') + '</span>';
+    }).join(' ') + '</p>');
+  }
+
+  var info = '<div class="rows__row st" style="--i:0"><span class="rows__label">Visit</span>' +
+    '<a href="' + esc(mapsUrl) + '" target="_blank" rel="noopener">' + esc(addressLine) + '</a></div>';
+  if (C.hours) info += '<div class="rows__row st" style="--i:1"><span class="rows__label">Hours</span><span>' + esc(C.hours) + '</span></div>';
+  info += '<div class="rows__row st" style="--i:2"><span class="rows__label">Call</span><div>' +
+    C.phones.map(function (p) {
+      return '<a href="tel:' + esc(p.number) + '">' + esc(p.display) + ' <small>· ' + esc(p.label) + '</small></a>';
+    }).join('') + '</div></div>';
+  if (C.languages.length) info += '<div class="rows__row st" style="--i:3"><span class="rows__label">Speaks</span><span>' + esc(C.languages.join(', ')) + '</span></div>';
+  html += section('The Clinic', '<div class="rows">' + info + '</div>');
+
+  $('sections').innerHTML = html;
+  $('foot').textContent = C.clinic + (C.established ? ' · Since ' + C.established : '');
+
+  /* ---------- Scroll reveals (progressive enhancement) ---------- */
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !calm) {
+    document.documentElement.classList.add('io');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (el) { observer.observe(el); });
+  }
+
+  /* ---------- vCard (Save Contact) ---------- */
+  function vEsc(value) {
+    return String(value).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/([,;])/g, '\\$1');
+  }
+  function buildVCard() {
+    var lines = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:' + vEsc(n.family) + ';' + vEsc(n.given) + ';;' + vEsc(n.prefix) + ';' + vEsc(C.qualifications || ''),
+      'FN:' + vEsc(C.name),
+      'ORG:' + vEsc(C.clinic),
+      'TITLE:' + vEsc(C.designation)
+    ];
+    C.phones.forEach(function (p, i) {
+      var type = /clinic|work|land/i.test(p.label) ? 'WORK,VOICE' : 'CELL,VOICE';
+      lines.push('TEL;TYPE=' + type + (i === 0 ? ',PREF' : '') + ':' + p.number);
+    });
+    if (C.email) lines.push('EMAIL;TYPE=INTERNET,WORK:' + C.email);
+    lines.push('ADR;TYPE=WORK:;;' + [a.street + (a.locality ? ', ' + a.locality : ''), a.city, a.state, a.postalCode, a.country].map(vEsc).join(';'));
+    if (C.website) lines.push('URL:' + C.website);
+    if (C.hours) lines.push('NOTE:' + vEsc('Clinic hours: ' + C.hours));
+    lines.push('END:VCARD');
+    return lines.join('\r\n') + '\r\n';
+  }
+
+  var resetTimer;
+  $('saveBtn').addEventListener('click', function () {
+    var vcard = buildVCard();
+    var link = document.createElement('a');
+    var url;
+    try {
+      url = URL.createObjectURL(new Blob([vcard], { type: 'text/vcard;charset=utf-8' }));
+    } catch (err) {
+      url = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcard);
+    }
+    link.href = url;
+    link.download = C.vcardFilename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    if (url.indexOf('blob:') === 0) setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+
+    var button = this;
+    var status = $('status');
+    button.querySelector('svg').innerHTML = ICON.check;
+    $('saveLabel').textContent = 'Contact Ready';
+    status.textContent = 'Open the downloaded card to add it to your contacts.';
+    status.classList.add('is-on');
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(function () {
+      button.querySelector('svg').innerHTML = ICON.save;
+      $('saveLabel').textContent = 'Save Contact';
+      status.classList.remove('is-on');
+    }, 4500);
+  });
+})();
+</script>
+</body>
+</html>
